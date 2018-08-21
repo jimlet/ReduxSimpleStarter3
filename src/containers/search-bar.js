@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Secrets from '../config/secrets';
 
 export default class SearchBar extends Component {
   constructor(props) {
@@ -10,12 +11,19 @@ export default class SearchBar extends Component {
   }
 
   onInputChange(event) {
-    this.setState({term: event.target.value});
+    this.setState({ term: event.target.value });
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault();
+
+    // We need to go fetch weather data.
+    console.log(Secrets.API_KEY);
   }
 
   render() {
     return (
-      <form className='input-group'>
+      <form className='input-group' onSubmit={this.onFormSubmit}>
         <input 
           placeholder="Get a 5 day forecast in your favorite cities"
           className="form-control"

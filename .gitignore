@@ -107,4 +107,4 @@ typings/
 bundle.js
 
 # Hardcoded private config - just keep it simple since this is a play project.
-/src/secrets.js
+/src/config/secrets.js
